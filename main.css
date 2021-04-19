@@ -1,0 +1,153 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --clr-primary-300: #fab2ea;
+    --clr-primary-400: #830a48;
+    --clr-primary-500: #4a051c;
+    --clr-secondary-400: #52ffb8;
+    --clr-secondary-200: #d0fef5;
+    --clr-neutral-400: #fff8c2;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background-image: linear-gradient(
+        135deg,
+        var(--clr-primary-300),
+        var(--clr-secondary-400)
+    );
+    background-repeat: no-repeat;
+    text-align: center;
+    height: 100vh;
+
+    color: var(--clr-primary-500);
+}
+
+.wrapper {
+    max-width: 40rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    font-family: "Jim Nightshade", cursive;
+}
+
+header,
+main {
+    background: var(--clr-secondary-200);
+    margin: 1rem;
+    padding: 2rem;
+    box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+.row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.flow > * + * {
+    margin-top: 1.5em;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--clr-primary-300);
+    color: var(--clr-primary-400);
+    padding: 1rem 2rem;
+    border: none;
+    font-weight: 700;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+}
+
+.btn:hover,
+.btn:focus {
+    opacity: 0.8;
+}
+
+.btn:active {
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+}
+
+.btn[data-reset] {
+    display: none;
+}
+
+.dice {
+    --dimensions: 7rem;
+    background-color: var(--clr-neutral-400);
+    height: var(--dimensions);
+    width: var(--dimensions);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    place-items: center;
+    margin-top: 0.5rem;
+}
+
+.dot {
+    --dot: 1.5rem;
+    display: block;
+    height: var(--dot);
+    width: var(--dot);
+    background: var(--clr-primary-500);
+    border-radius: 50%;
+}
+
+.dice[data-value="1"] .dot {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.dice[data-value="2"] .dot:last-child {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.dice[data-value="3"] .dot:nth-child(2) {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.dice[data-value="3"] .dot:last-child {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.dice[data-value="4"] .dot:nth-child(2n) {
+    grid-column: 3;
+}
+
+.dice[data-value="4"] .dot:nth-child(-n + 2) {
+    grid-row: 3;
+}
+
+.dice[data-value="5"] .dot:nth-child(2n) {
+    grid-column: 3;
+}
+
+.dice[data-value="5"] .dot:nth-child(-n + 2) {
+    grid-row: 3;
+}
+
+.dice[data-value="5"] .dot:last-child {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.dice[data-value="6"] .dot:nth-child(2n) {
+    grid-column: 3;
+}
