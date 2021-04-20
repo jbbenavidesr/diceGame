@@ -28,7 +28,7 @@ body {
     background-repeat: no-repeat;
     text-align: center;
     height: 100vh;
-
+    padding-top: 1rem;
     color: var(--clr-primary-500);
 }
 
@@ -63,13 +63,15 @@ main {
 }
 
 .btn {
-    display: inline-block;
+    display: block;
     background-color: var(--clr-primary-300);
     color: var(--clr-primary-400);
     padding: 1rem 2rem;
     border: none;
     font-weight: 700;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .btn:hover,
@@ -96,6 +98,10 @@ main {
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
     place-items: center;
     margin-top: 0.5rem;
+}
+
+[data-active] .dice {
+    box-shadow: -2px 0.5rem 1rem 3px rgba(0, 0, 0, 0.75);
 }
 
 .dot {

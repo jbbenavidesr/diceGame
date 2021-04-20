@@ -18,33 +18,21 @@
                 <h1>Dice game</h1>
             </header>
             <main class="flow">
-                <h2>It's the turn of player <span data-turn>1</span></h2>
+                <h2 data-turn>It's the turn of player <span>1</span></h2>
                 <div class="game row">
-                    <div class="player" data-player="1">
+                    <div class="player" data-player="1" data-active>
                         <h3>Score: <span data-score>0</span></h3>
-                        <div class="dice" data-value="6">
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                        </div>
+                        <div class="dice" data-value=""></div>
                     </div>
                     <div class="player" data-player="2">
                         <h3>Score: <span data-score>0</span></h3>
-                        <div class="dice" data-value="5">
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                        </div>
+                        <div class="dice" data-value=""></div>
                     </div>
                 </div>
                 <button class="btn" data-roll>Roll the dice</button>
                 <button class="btn" data-reset>Reset game</button>
             </main>
         </div>
+        <script src="/main.js"></script>
     </body>
 </html>
