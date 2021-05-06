@@ -26,12 +26,26 @@
         player2.toggleAttribute("data-active");
     };
 
-    let rollDice = function (currentdice) {
-        let rollNumber = Math.floor(Math.random() * 6) + 1;
+    let updateDice = function (rollNumber, currentdice) {
         currentdice.dataset.value = rollNumber;
         currentdice.innerHTML = "<div class='dot'></div>".repeat(rollNumber);
+    };
 
-        return rollNumber;
+    let rollDice = function (currentdice) {
+        let rollNumber = Math.floor(Math.random() * 6) + 1;
+        let nRolls = 5 + Math.floor(Math.random() * 10);
+        let rollEnd = ((rollNumber + nRolls - 1) % 6) + 1;
+        (function rollLoop(n) {
+            if (n < nRolls) {
+                setTimeout(function () {
+                    rollLoop(n);
+                }, 30 * n + 10);
+            }
+            updateDice(rollNumber, currentdice);
+            n++;
+            rollNumber = (rollNumber % 6) + 1;
+        })(0);
+        return rollEnd;
     };
 
     let updateScores = function () {
